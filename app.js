@@ -60,7 +60,7 @@
 
 // // 1
 
-
+//
 // const stringOne = "Some string 1";
 // const stringTwo = "Some string 2";
 //
@@ -75,8 +75,8 @@
 //
 // console.log(addToStringOne( " Test" )); // Some string 1 Test
 // console.log(addToStringTwo( " Test" )); // Some string 2 Test
-//
-//
+
+
 //
 //
 //
@@ -188,28 +188,47 @@
 
 
 
+// function sum(string) {
+//         let arr = string.split('');
+//         let  arrTwo = [];
+//
+//
+//
+//         for (let i = 0; i < arr.length; i++) {
+//
+//                 const wordOne = arr[i];
+//
+//                 if (wordOne.startsWith('w')) {
+//
+//                         arrTwo.push('W', wordOne.slice(1))
+//
+//
+//                 } else {
+//                         arrTwo.push(wordOne)
+//                 }
+//         }
+//         return arrTwo.join('');
+//
+//
+//
+// }
+// console.log(sum('we wish you a marry'));
+
+//_____________________________________________________________________________________________________________________________________________________________-
+
+
 function sum(string) {
-        let arr = string.split('');
-        let  arrTwo = [];
+        let arr = string.split(' ');
+        let result;
+
+        result = arr.map(i=> i.startsWith('w') ? i.replace('w','W') : i.slice(i)).join(' ');
+        console.log(result);
 
 
-
-        for (let i = 0; i < arr.length; i++) {
-
-                const wordOne = arr[i];
-
-                if (wordOne.startsWith('w')) {
-
-                        arrTwo.push('W', wordOne.slice(1))
-
-
-                } else {
-                        arrTwo.push(wordOne)
-                }
-        }
-        return arrTwo.join(' ');
 
 
 
 }
-console.log(sum('we wish you a marry'));
+
+
+sum('we wish you a marry');
